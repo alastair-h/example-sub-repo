@@ -28,4 +28,4 @@ jobs:
       - run: |
           newsemver=$(awk -F. -v OFS=. '{$NF += 1 ; print}' ./output/version.txt)
           echo $newsemver > ./output/version.txt
-          cat version.txt
+          cat ./output/version.txt
