@@ -15,12 +15,12 @@ jobs:
       - name: checkout external repo
         uses: actions/checkout@v2
         with:
-          repository: alastair-h/example-output-repo
+          repository: alastair-h/example-output-repository
           path: './'
       - name: checkout external repo 2EB
         uses: actions/checkout@v2
         with:
-          repository: alastair-h/example-output-repo
+          repository: alastair-h/example-output-repository
           path: './e2-external-output-repo'
       - run: ls
       - run: ls e2-external-output-repo
