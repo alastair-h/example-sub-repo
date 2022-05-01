@@ -21,6 +21,10 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: alastair-h/example-output-repository
-          path: './e2-external-output-repo'
+          path: './output'
       - run: ls
-      - run: ls e2-external-output-repo
+      - run: ls ./output/e2-external-output-repository
+      - run: |
+          newsemver=$(awk -F. -v OFS=. '{$NF += 1 ; print}' ./output/e2-external-output-repository/version.txt)
+          echo $newsemver > version.txt
+          cat version.txt
