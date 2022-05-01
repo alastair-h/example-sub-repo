@@ -1,0 +1,10 @@
+name: CI
+
+
+
+on:  [push]
+  uses: actions/checkout@v2
+    with:
+      repository:alastair-h/example-sub-repo
+      path: './'
+  run: ls  
