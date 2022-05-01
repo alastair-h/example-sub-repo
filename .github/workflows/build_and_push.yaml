@@ -25,8 +25,7 @@ jobs:
       - run: |
             ls
             ls output
-            ls ./output/e2-external-output-repository
       - run: |
-          newsemver=$(awk -F. -v OFS=. '{$NF += 1 ; print}' ./output/e2-external-output-repository/version.txt)
-          echo $newsemver > version.txt
+          newsemver=$(awk -F. -v OFS=. '{$NF += 1 ; print}' ./output/version.txt)
+          echo $newsemver > ./output/version.txt
           cat version.txt
