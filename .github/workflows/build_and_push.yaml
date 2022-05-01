@@ -1,10 +1,20 @@
+---
+# build_and_push.yaml
 name: CI
 
+on: [ push ]
 
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
 
-on:  [push]
-  uses: actions/checkout@v2
-    with:
-      repository:alastair-h/example-sub-repo
-      path: './'
-  run: ls  
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: checkout external repo
+        uses: actions/checkout@v2
+        with:
+          repository: alastair-h/example-sub-repo
+          path: './'
+      - run: ls
