@@ -36,6 +36,6 @@ jobs:
         with:
           source-directory: 'output'
           destination-github-username: 'alastair-h'
-          destination-repository-name: 'example-output-repository'
+          destination-repository-name: 'solid-funicular'
           user-email: ajwhirst@gmail.com
           target-branch: main
