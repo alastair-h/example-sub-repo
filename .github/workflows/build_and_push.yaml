@@ -31,6 +31,8 @@ jobs:
           cat ./output/version.txt
       - name: push to new repo
         uses: cpina/github-action-push-to-another-repository@devel
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }} 
         with:
           source-directory: output/
           destination-github-username: 'alastair-h'
