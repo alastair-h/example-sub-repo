@@ -35,8 +35,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.PUSH_TOKEN }}
         with:
           source-directory: output/
-          destination-github-username: 'alastair-h'
-          destination-repository-name: 'example-steve-repository'
+          destination-repository-name: 'example-output-repository'
           user-email: ajwhirst@gmail.com
           commit-message: test
           target-branch: main
