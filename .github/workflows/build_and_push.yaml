@@ -17,7 +17,7 @@ jobs:
         with:
           repository: alastair-h/example-output-repository
           path: './'
-      - name: checkout external repo 2EB
+      - name: checkout external repo
         uses: actions/checkout@v2
         with:
           repository: alastair-h/example-output-repository
@@ -29,3 +29,14 @@ jobs:
           newsemver=$(awk -F. -v OFS=. '{$NF += 1 ; print}' ./output/version.txt)
           echo $newsemver > ./output/version.txt
           cat ./output/version.txt
+      - name: push to new repo
+        uses: cpina/github-action-push-to-another-repository@devel
+        with:
+          source-directory: output/
+          destination-github-username: 'alastair-h'
+          destination-repository-name: 'example-output-repository'
+          user-email: ajwhirst@gmail.com
+          commit-message: See ORIGIN_COMMIT from $GITHUB_REF
+          target-branch: main
+            - name: Test get variable exported by push-to-another-repository
+              run: echo $DESTINATION_CLONED_DIRECTORY
