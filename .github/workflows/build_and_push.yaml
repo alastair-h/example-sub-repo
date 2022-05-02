@@ -30,11 +30,11 @@ jobs:
           echo $newsemver > ./output/version.txt
           cat ./output/version.txt
       - name: push to new repo
-        uses: cpina/github-action-push-to-another-repository@devel
+        uses: cpina/github-action-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.PUSH_TOKEN }}
         with:
-          source-directory: source
+          source-directory: output/
           destination-github-username: 'alastair-h'
           destination-repository-name: 'example-output-repository'
           user-email: ajwhirst@gmail.com
