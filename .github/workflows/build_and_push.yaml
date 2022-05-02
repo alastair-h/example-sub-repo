@@ -17,6 +17,7 @@ jobs:
         with:
           repository: alastair-h/example-output-repository
           path: './output'
+          token: ${{ secrets.PUSH_TOKEN }}
       - run: |
             ls
             ls output
