@@ -32,11 +32,11 @@ jobs:
       - name: push to new repo
         uses: cpina/github-action-push-to-another-repository@main
         env:
-          API_TOKEN_GITHUB: 10
+          API_TOKEN_GITHUB: ${{ secrets.PUSH_TOKEN }}
         with:
           source-directory: output/
           destination-github-username: 'alastair-h'
-          destination-repository-name: 'example-output-repository'
+          destination-repository-name: 'example-steve-repository'
           user-email: ajwhirst@gmail.com
           commit-message: test
           target-branch: main
