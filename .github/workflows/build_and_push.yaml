@@ -29,15 +29,13 @@ jobs:
           newsemver=$(awk -F. -v OFS=. '{$NF += 1 ; print}' ./output/version.txt)
           echo $newsemver > ./output/version.txt
           cat ./output/version.txt
-      - name: push to new repo
+      - name: Pushes to another repository
         uses: cpina/github-action-push-to-another-repository@main
         env:
-          API_TOKEN_GITHUB: ${{ secrets.PUSH_TOKEN }}
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: output/
+          source-directory: 'output'
+          destination-github-username: 'alastair-h'
           destination-repository-name: 'example-output-repository'
           user-email: ajwhirst@gmail.com
-          commit-message: test
           target-branch: main
-      - name: Test get variable exported by push-to-another-repository
-        run: echo $DESTINATION_CLONED_DIRECTORY
